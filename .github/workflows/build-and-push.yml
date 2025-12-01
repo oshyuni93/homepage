@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      packages: write
       actions: write
       contents: read
       packages: write
