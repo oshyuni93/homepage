@@ -5,10 +5,11 @@ metadata:
   namespace: homepage
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
+  storageClassName: longhorn
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -26,18 +27,18 @@ spec:
         app: redis
     spec:
       containers:
-      - name: redis
-        image: redis:7-alpine
-        ports:
-        - containerPort: 6379
-        volumeMounts:
-        - name: data
-          mountPath: /data
-        args: ["--appendonly", "yes"]
+        - name: redis
+          image: redis:7-alpine
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          args: ["--appendonly", "yes"]
       volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: redis-pvc
+        - name: data
+          persistentVolumeClaim:
+            claimName: redis-pvc
 ---
 apiVersion: v1
 kind: Service
@@ -46,7 +47,6 @@ metadata:
   namespace: homepage
 spec:
   ports:
-  - port: 6379
+    - port: 6379
   selector:
     app: redis
-
