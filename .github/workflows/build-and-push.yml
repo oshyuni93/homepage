@@ -8,6 +8,12 @@ on:
       - "front-end/**"
       - ".github/workflows/build-and-push.yml"
 
+env:
+  #REGISTRY: harbor.spaasta.com
+  #IMAGE_NAME: rancher/v2.11.2
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }} # The target repo
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
