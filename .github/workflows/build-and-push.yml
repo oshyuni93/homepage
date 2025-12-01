@@ -10,7 +10,7 @@ env:
   REGISTRY: ghcr.io
   BACKEND_IMAGE_NAME: ${{ github.repository_owner }}/homepage-backend
   FRONTEND_IMAGE_NAME: ${{ github.repository_owner }}/homepage-frontend
-  IMAGE_TAG: v2.11.3
+  IMAGE_TAG: v1.0
 
 jobs:
   build-and-push:
