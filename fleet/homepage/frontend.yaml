@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ghcr.io/oshyuni93/homepage-frontend:v1.0
+        image: ghcr.io/oshyuni93/homepage/frontend:v1.0
         ports:
         - containerPort: 80
 ---
