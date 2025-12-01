@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BGROUND</title>
+	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/common.css">
+	<link rel="stylesheet" href="/assets/css/sub.css">
+	<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+
+	<script src="/assets/js/swiper-bundle.min.js"></script>
+  <script src="/assets/js/common.js"></script>
+</head>
+<body>
+	<div id="skip_navi">
+		<p><a href="#content-wrap">본문 바로가기</a></p>
+		<p><a href="#gnb">메인메뉴 바로가기</a></p>
+	</div>
+	<div id="wrap">
+		<header class="header">
+			<div class="dim"></div>
+			<div class="header-inner">
+				<h1 class="logo">
+					<a href="/" title="BGROUND 홈페이지로 이동">
+						<img src="/assets/images/common/logo.svg" alt="BGROUND 로고">
+					</a>
+				</h1>
+				<nav id="gnb" class="gnb">					
+					<div class="m-gnb-head">
+						<span class="m-logo"><img src="/assets/images/common/logo.svg" alt="BGROUND 로고"></span>
+						<button type="button" class="btn-menu-close"><span class="sr-only">메뉴 닫기</span></button>
+					</div>
+					<ul>
+						<li>
+							<a href="/">홈</a>
+							<ul>
+								<li>
+									<a href="/">홈</a>
+								</li>
+							</ul>
+						</li>
+						<li class="sub">
+							<a href="/company">회사소개</a>
+							<ul>
+								<li>
+									<a href="/company">회사소개</a>
+								</li>
+								<li>
+									<a href="/company/story">Our Stroy</a>
+								</li>
+								<li>
+									<a href="/company/team">Our Team</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/products">제품소개</a>
+							<ul>
+								<li>
+									<a href="/products">Infinitystack</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="/contact">문의하기</a>
+							<ul>
+								<li>
+									<a href="/contact">문의하기</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<button type="button" class="btn-m-menu"><span class="sr-only">메뉴 열기</span></button>
+			</div>
+		</header>
+		<main id="content-wrap" class="content-wrap">
+			<div class="sub-visual">
+				<img src="/assets/images/sub/visaul_img03.png" alt="">
+				<h2>문의하기</h2>
+			</div>
+			<section class="contactus-form-wrap">
+        <div class="contactus-inner">
+          <div class="form-group-wrap">
+            <div class="form-group">
+              <div class="form-tit">
+                <label for="name" class="required">이름 또는 기업명</label>
+              </div>
+              <div class="form-conts">
+                <input type="text" id="name" class="input" placeholder="이름 또는 기업명을 입력해 주세요.">              
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-tit">
+                <label for="mail" class="required">이메일</label>
+              </div>
+              <div class="form-conts">
+                <input type="text" id="mail" class="input" placeholder="이메일을 입력해 주세요.">              
+              </div>
+            </div>
+          </div>
+          <div class="form-group-wrap">
+            <div class="form-group">
+              <div class="form-tit">
+                <label for="telno">전화번호</label>
+              </div>
+              <div class="form-conts">
+                <input type="text" id="telno" class="input" placeholder="전화번호를 입력해 주세요.">              
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-tit">
+                <label for="referrer">방문 경로</label>
+              </div>
+              <div class="form-conts">
+                <input type="text" id="referrer" class="input" placeholder="방문 경로를 입력해 주세요. (ex. 검색)">              
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-tit">
+              <label for="title" class="required">제목</label>
+            </div>
+            <div class="form-conts">
+              <input type="text" id="title" class="input" placeholder="제목을 입력해 주세요.">              
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-tit">
+              <label for="contents" class="required">내용</label>
+            </div>
+            <div class="form-conts">
+              <textarea name="input06" id="contents" class="textarea" placeholder="문의 내용을 입력해 주세요."></textarea>           
+            </div>
+          </div>
+
+          <div class="form-check-area">
+            <div class="form-check">
+              <div class="check-inner">
+                <input type="checkbox" name="chk01" id="confirm">
+                <label for="chk01">개인정보 수집에 동의합니다.</label>
+                <i></i>
+              </div>
+            </div>            
+          </div>
+
+          <div class="btn-line">
+            <button type="button" class="btns">제출하기</button>
+          </div>
+        </div>
+			</section>
+      <section class="etc-info-wrap">
+        <div class="etc-info-inner">
+          <div class="left-line">
+            <div class="conts-flex">
+              <div class="conts-line">
+                <span class="tit">상담문의</span>
+                <p class="txt">010-8639-9760</p>
+              </div>
+              <div class="conts-line">
+                <span class="tit">이메일</span>
+                <p class="txt">work@bground.com</p>
+              </div>
+            </div>
+            <div class="conts-line">
+              <span class="tit">주소</span>
+              <p class="txt">서울특별시 구로구 구로중앙로26길 24</p>
+            </div>
+            <div class="conts-line">
+              <span class="tit">영업시간</span>
+              <div class="between">
+                <p class="txt">월요일  ~  금요일</p>
+                <p class="txt">09:00 ~  18:00</p>
+              </div>
+              <div class="between">
+                <p class="txt">토요일  ~  일요일</p>
+                <p class="txt">휴무</p>
+              </div>
+            </div>
+          </div>
+          <div class="right-line">
+            <div id="daumRoughmapContainer1750211416873" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+          </div>
+        </div>
+      </section>
+						
+		</main>
+		<footer class="footer">
+			<div class="footer-inner">
+				<div class="left">
+					<span class="tit">비그라운드(주)</span>
+					<p class="address">서울특별시 구로구 구로중앙로26길 24, 201호(구로동, 예성빌딩)</p>
+					<p class="copyright">CopyrightⓒBeground</p>
+					<ul class="footer-link">
+						<li><a href="javascript:void(0)">이용약관</a></li>
+						<li><a href="javascript:void(0)">개인정보처리방침</a></li>
+					</ul>
+				</div>
+				<div class="right">
+					<span class="foot-logo"><img src="/assets/images/common/foot_logo.svg" alt=""></span>
+					<ul class="sns-link">
+						<li>
+							<a href="javascript:void(0)" title="facebook"><img src="/assets/images/common/facebook.svg" alt=""></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" title="twitter"><img src="/assets/images/common/twitter.svg" alt=""></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" title="linkedin"><img src="/assets/images/common/linkedin.svg" alt=""></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" title="youtube"><img src="/assets/images/common/youtube.svg" alt=""></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+  <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+	<script>
+    // Daum Roughmap
+    new daum.roughmap.Lander({
+      "timestamp" : "1750211416873",
+      "key" : "3qxfuvguyoc",
+      "mapWidth" : "560",
+      "mapHeight" : "390"
+    }).render();
+	</script>
+  <script>
+  document.querySelector('.btns').addEventListener('click', async function() {
+    // 필수 필드 검증
+    const name = document.getElementById('name').value.trim();
+    const mail = document.getElementById('mail').value.trim();
+    const title = document.getElementById('title').value.trim();
+    const contents = document.getElementById('contents').value.trim();
+    const confirm = document.getElementById('confirm').checked;
+
+    if (!name) {
+      alert('이름 또는 기업명을 입력해주세요.');
+      document.getElementById('name').focus();
+      return;
+    }
+    if (!mail) {
+      alert('이메일을 입력해주세요.');
+      document.getElementById('mail').focus();
+      return;
+    }
+    if (!title) {
+      alert('제목을 입력해주세요.');
+      document.getElementById('title').focus();
+      return;
+    }
+    if (!contents) {
+      alert('내용을 입력해주세요.');
+      document.getElementById('contents').focus();
+      return;
+    }
+    if (!confirm) {
+      alert('개인정보 수집에 동의해주세요.');
+      document.getElementById('confirm').focus();
+      return;
+    }
+
+    const payload = {
+      name: name,
+      mail: mail,
+      telno: document.getElementById('telno').value.trim(),
+      referrer: document.getElementById('referrer').value.trim(),
+      title: title,
+      contents: contents,
+      confirm: confirm
+    };
+
+    try {
+      const res = await fetch('http://localhost:8000/api/contactus', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        alert('문의가 정상적으로 접수되었습니다.');
+        location.reload();
+      } else {
+        const errorData = await res.json();
+        alert('오류가 발생했습니다: ' + (errorData.detail || '알 수 없는 오류'));
+      }
+    } catch (error) {
+      console.error('API 호출 오류:', error);
+      alert('서버 연결에 실패했습니다. 잠시 후 다시 시도해주세요.');
+    }
+  });
+  </script>
+</body>
+</html>

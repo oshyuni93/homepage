@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: homepage_postgres
+    environment:
+      POSTGRES_DB: homepage_db
+      POSTGRES_USER: homepage_user
+      POSTGRES_PASSWORD: homepage_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - homepage_network
+
+  # Redis for Session Storage
+  redis:
+    image: redis:7-alpine
+    container_name: homepage_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - homepage_network
+    restart: unless-stopped
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+    container_name: homepage_backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://homepage_user:homepage_password@postgres:5432/homepage_db
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - homepage_network
+    restart: unless-stopped
+
+  # Frontend (Nginx)
+  frontend:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    container_name: homepage_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - homepage_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  homepage_network:
+    driver: bridge
