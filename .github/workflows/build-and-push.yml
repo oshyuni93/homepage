@@ -13,21 +13,26 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      packages: write
+      actions: write
       contents: read
       packages: write
 
     steps:
       # 1) Checkout source code
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WORKFLOW_PAT }} # The PAT referenced in prerequisites
+          submodules: recursive # If the repo has multiple submodules to checkout
 
       # 2) Log in to GHCR
-      - name: Login to GHCR
-        uses: docker/login-action@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }} # This is the repo owner
+          password: ${{ secrets.GITHUB_TOKEN }} # A token generated during the workflow
 
       ############################################################
       # Backend Image Build & Push
@@ -35,12 +40,12 @@ jobs:
       - name: Build backend image
         run: |
           docker build \
-            -t ghcr.io/${{ github.repository_owner }}/homepage-backend:latest \
+            -t ghcr.io/${{ github.repository_owner }}/homepage-backend:v1.0 \
             ./back-end
 
       - name: Push backend image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/homepage-backend:latest
+          docker push ghcr.io/${{ github.repository_owner }}/homepage-backend:v1.0
 
       ############################################################
       # Frontend Image Build & Push
@@ -48,10 +53,10 @@ jobs:
       - name: Build frontend image
         run: |
           docker build \
-            -t ghcr.io/${{ github.repository_owner }}/homepage-frontend:latest \
+            -t ghcr.io/${{ github.repository_owner }}/homepage-frontend:v1.0 \
             ./front-end
 
       - name: Push frontend image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/homepage-frontend:latest
+          docker push ghcr.io/${{ github.repository_owner }}/homepage-frontend:v1.0
 
